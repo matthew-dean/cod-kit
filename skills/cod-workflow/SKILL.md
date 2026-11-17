@@ -15,6 +15,8 @@ Assemble a compact, source-grounded brief: acceptance → responsible capability
 
 Use the request or existing issue/brief to retain acceptance conditions and consequential answers, distinguishing user requirements, existing constraints and assumptions. Do not require another file. Once resolved, connect changed acceptance to the relevant contract and native assertions; review them against the original intent. Passing conformance does not prove the requirement was correctly chosen.
 
+Before citing a rule from a comment, generated Markdown or a prior review, verify its source and scope. Label your own consequential choices and assumptions where you record them. Keep prose only where it carries context missing from code, tests and existing docs. For a confirmed failure, fix the cause and reuse a native check where it can catch recurrence. During review, correct unsupported rationale and identify where the restriction is enforced. See [decision provenance](https://github.com/matthew-dean/cod-kit/blob/main/docs/workflows.md#keep-decisions-traceable), also bundled in `docs/workflows.md`.
+
 ## Start with the unified contract
 
 When the project uses the toolkit, read `capability.json` and run `cod inspect <root> <contract>` (or MCP `cod_inspect_contract`) before choosing an owner. All supported JavaScript, C# and Vue profiles use that format. It selects actual native execution; do not create separate runtime, qualification, workflow or binding JSON files for a new adoption.

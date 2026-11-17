@@ -34,6 +34,16 @@ Review the result against the original request and recorded decisions as well as
 
 SDD tools may supply the feature description, clarification and planning stages. COD accepts those artifacts and carries the resulting obligations into maintained owners and consumers; it does not require copying them into a second specification system.
 
+## Keep decisions traceable
+
+Treat existing comments and generated Markdown as leads. Before relying on a claimed rule, trace it to the request, a maintainer decision, a maintained contract, or a verified external constraint. Check that the source applies to the current change. Attribute a rule to a person only when their instruction or recorded decision supports it. Code and tests can show what the system does today, even when the reason is unknown.
+
+Omit a new comment or checked-in note when code, tests, or existing documentation already carry the information. When future maintainers need context they cannot recover there, use a short comment or update the existing decision record. Record who made the decision, what evidence supports it, and where it applies. Label an agent choice as an implementation choice or assumption. Keep proposals and temporary workarounds scoped to the conditions that justify them. Keep task summaries and check output with the work they describe.
+
+When a correction exposes a concrete failure mode, fix the cause. Prefer an existing compiler, lint rule, test, or capability check that would catch the failure again. If a confirmed requirement can be checked mechanically and lacks coverage, add a focused check. Verify that it catches a plausible failure and accepts a valid case. Keep judgments that need context in the existing review or decision record.
+
+During normal review, challenge new or touched text that makes a workaround sound mandatory, generalizes a one-off correction, or attributes a choice to the maintainer. Trace the claim before preserving it. Correct or remove unsupported rationale and reconcile any code, contract, or check that enforces it. If a cap appears only in a constant and a generated explanation, report where it is enforced and that its authority is unconfirmed. Resolve the intended behavior before changing a consequential limit.
+
 ## Adopt in an existing repository
 
 Choose one shared responsibility that is worth protecting. Identify its real owner and consumers. Reuse existing public types, component APIs and tests.

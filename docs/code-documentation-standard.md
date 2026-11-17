@@ -1,6 +1,6 @@
 # Explanatory code documentation standard
 
-Code documentation preserves decisions that cannot be recovered reliably from names, types, and control flow alone. Its job is to explain why the implementation has its current shape and what a future change must continue to preserve.
+Code documentation preserves decisions that cannot be recovered reliably from names, types, control flow and tests. Prefer making the code easier to follow and asserting required behavior with native checks. Keep prose for context those changes cannot carry. Follow [decision provenance](workflows.md#keep-decisions-traceable) when recording a constraint or the reason for a workaround.
 
 ## What deserves explanation
 
@@ -14,7 +14,7 @@ Document a code hotspot when a maintainer needs context about one or more of the
 - **Lifecycle:** ownership, cleanup, cancellation, reconnection, retry, and partial-failure behavior.
 - **Rationale:** non-obvious compatibility constraints, historical traps, and why a tempting alternative is wrong here.
 
-Put a short explanation beside the relevant code when it prevents a local misread. Put the durable design narrative in a checked-in document when it spans symbols, files, delivery modes, or tests. Use an `@docs <hotspot-id>` marker on the documented declaration so the source, narrative, and evidence stay connected through refactors.
+Put a short explanation beside the relevant code when it prevents a local misread. Update the existing design document when the decision belongs there. For a declared hotspot, use the `@docs <hotspot-id>` marker on the documented declaration so the source, narrative, and evidence stay connected through refactors.
 
 ## What does not help
 
@@ -43,3 +43,4 @@ Run `threadlabs audit . --json` as the deterministic gate after adopting hotspot
 - Are performance claims tied to a workload or measurement rather than adjectives?
 - Does lifecycle documentation cover cleanup and partial failure, not only startup?
 - Do links and tests prove the current claim, and are historical details clearly labeled?
+- Can the reader trace a claimed restriction to its source and tell whether it is an approved requirement, a verified constraint, or an implementation choice?

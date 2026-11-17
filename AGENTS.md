@@ -3,6 +3,7 @@
 - This repository is personal, experimental, and MIT-licensed. Do not publish packages.
 - Read README.md and docs/specification.md for current behavior; Current guidance has one release identity in package.json.
 - Source owns actual exports and types. Manifests own intent and canonical responsibility. Tests own executable assertions. Trial records own observations.
+- Follow [decision provenance](docs/workflows.md#keep-decisions-traceable) when relying on or writing comments, Markdown and contracts. Trace claimed restrictions to their source, label agent choices, and keep durable prose focused on context missing from code and tests.
 - Never equate structural validation or lexical matching with semantic correctness, architectural quality, or COD effectiveness.
 - Presentation enforcement checks only declared source obligations; preserve unresolved coverage and run independent behavior/visual checks. A corrected development case is not a held-out comparative win. Small fixtures cannot decide full application maintenance value.
 - Before adding an operation, inspect source and identify common rules below the enclosing service/file. Share a fitting policy proportionately; keep operation-specific constraints separate. Use capability lookup when useful and record concrete mismatches when creating.
